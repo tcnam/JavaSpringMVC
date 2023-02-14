@@ -1,4 +1,4 @@
-package dev.namtran.movies.service;
+package dev.namtran.movies.Service;
 
 import java.util.List;
 
@@ -16,16 +16,16 @@ public class MovieService {
     @Autowired
     private MovieRepository movieRepository;
 
-    public List<Movie> allMovies(){
-        System.out.println(movieRepository.findAll().toString());
+    public List<Movie> getAllMovies(){
+        // System.out.println(movieRepository.findAll().toString());
         return movieRepository.findAll();
     }
 
-    // public Optional<Movie> singleMovie(String imdbId){
-    //     return movieRepository.findMovieByImbdId(imdbId);
-    // }
+    public Optional<Movie> singleMovie(String imdbId){
+        return movieRepository.findMovieByImdbId(imdbId);
+    }
 
-    public Movie saveMovie(Movie movie){
-        return movieRepository.save(movie);
+    public Movie createMovie(Movie movie){
+        return movieRepository.insert(movie);
     }
 }

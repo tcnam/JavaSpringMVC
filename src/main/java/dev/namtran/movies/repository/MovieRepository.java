@@ -11,5 +11,5 @@ import org.bson.types.ObjectId;
 
 @Repository
 public interface MovieRepository extends MongoRepository<Movie, ObjectId>{
-    // Optional<Movie> findMovieByImbdId(String imdbId);
+    Optional<Movie> findMovieByImdbId(String imdbId);
 }
